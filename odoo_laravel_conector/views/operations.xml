@@ -43,28 +43,26 @@
 
         </field>
     </record>
-
     <!-- Inherit Form View to Modify it -->
-    <record id="odoo_laravel_res_partner" model="ir.ui.view">
-        <field name="name">odoo_laravel_res_partner</field>
-        <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_form"/>
+    <record id="odoo_laravel_product_attribute" model="ir.ui.view">
+        <field name="name">odoo_laravel_product_attribute</field>
+        <field name="model">product.attribute</field>
+        <field name="inherit_id" ref="product.product_attribute_view_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='mobile']" position="after">
-                <field name="unique_id" invisible="1"/>
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="unique_id"/>
             </xpath>
 
         </field>
     </record>
-
     <!-- Inherit Form View to Modify it -->
-    <record id="odoo_laravel_product_template" model="ir.ui.view">
-        <field name="name">odoo_laravel_product_template</field>
+    <record id="odoo_laravel_product" model="ir.ui.view">
+        <field name="name">odoo_laravel_product</field>
         <field name="model">product.template</field>
         <field name="inherit_id" ref="product.product_template_only_form_view"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='barcode']" position="after">
-                <field name="unique_id" invisible="1"/>
+                <field name="unique_id"/>
             </xpath>
 
         </field>

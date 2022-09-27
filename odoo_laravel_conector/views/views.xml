@@ -84,7 +84,7 @@
             </field>
         </record>
         <menuitem name="Product Category" id="odoo_laravel_connector_category_menu"
-                  parent="odoo_laravel_connector_product" sequence="3" action="laravel_product_category_server_action"/>
+                  parent="odoo_laravel_connector_product" sequence="1" action="laravel_product_category_server_action"/>
 
         <!--        &&&&&&&&&&&&&&&&& PRODUCT BRAND VIEW &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
         <record model="ir.actions.server" id="laravel_product_brand_server_action">
@@ -102,40 +102,6 @@
         </record>
         <menuitem name="Product Brands" id="odoo_laravel_connector_brands_menu"
                   parent="odoo_laravel_connector_product" sequence="2" action="laravel_product_brand_server_action"/>
-
-        <!--        *****************************CUSTOMERS***********************************************************************************-->
-        <record model="ir.actions.server" id="laravel_customers_server_action">
-            <field name="name">laravel_customers_server_action</field>
-            <field name="model_id" ref="model_odoo_laravel_connector"/>
-            <field name="state">code</field>
-            <field name="code">
-                action = {
-                "name": 'Customers',
-                "res_model": "res.partner",
-                "type": "ir.actions.act_window",
-                'view_mode': 'kanban,tree,form',
-                }
-            </field>
-        </record>
-        <menuitem name="Customers" id="odoo_laravel_connector_customers_menu"
-                  parent="odoo_laravel_connector_menu_root" sequence="4" action="laravel_customers_server_action"/>
-
-         <!--        *****************************Products***********************************************************************************-->
-        <record model="ir.actions.server" id="laravel_products_server_action">
-            <field name="name">laravel_products_server_action</field>
-            <field name="model_id" ref="model_odoo_laravel_connector"/>
-            <field name="state">code</field>
-            <field name="code">
-                action = {
-                "name": 'Products',
-                "res_model": 'product.template',
-                "type": "ir.actions.act_window",
-                'view_mode': 'tree,form',
-                }
-            </field>
-        </record>
-        <menuitem name="Products" id="odoo_laravel_connector_products_menu"
-                  parent="odoo_laravel_connector_product" sequence="1" action="laravel_products_server_action"/>
 
     </data>
 </odoo>
